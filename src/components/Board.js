@@ -6,7 +6,7 @@ class Board extends Component {
   render() {
     return (
       <div className="Board">
-        <h1>Board</h1>
+        <Pad/>
         <Pad/>
         <Pad/>
         <Pad/>

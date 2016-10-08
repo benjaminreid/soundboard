@@ -5,7 +5,7 @@ class Pad extends Component {
   render() {
     return (
       <div className="Pad">
-        <h2>Pad</h2>
+        <div className="Pad__inner"></div>
       </div>
     );
   }
