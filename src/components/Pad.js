@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import './../css/Pad.css';
 
+
 class Pad extends Component {
   static defaultProps = {
     sound: {},
   }
 
   playSound = () => {
-    if (this.props.sound.play) {
-      this.props.sound.play();
+    const { sound } = this.props;
+    const PLAYING = 1;
+
+    if (sound.play) {
+      if (sound.playState === PLAYING) {
+        sound.stop();
+      } else {
+        sound.play();
+      }
     }
   }
 
