@@ -23,8 +23,17 @@ class App extends Component {
           url: `${process.env.PUBLIC_URL}/audio/outro.m4a`,
         });
 
+        const alert = soundManager.createSound({
+          id: 'alert',
+          url: `${process.env.PUBLIC_URL}/audio/alert.mp3`,
+        });
+
         this.setState({
-          sounds: [intro, outro],
+          sounds: [
+            intro,
+            outro,
+            alert,
+          ],
         });
       },
     });
