@@ -3,6 +3,13 @@ import Board from './components/Board';
 import { soundManager } from './../node_modules/soundmanager2/script/soundmanager2';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sounds: [],
+    };
+  }
+
   componentWillMount() {
     soundManager.setup({
       onready: () => {
@@ -15,6 +22,10 @@ class App extends Component {
           id: 'outro',
           url: `${process.env.PUBLIC_URL}/audio/outro.m4a`,
         });
+
+        this.setState({
+          sounds: [intro, outro],
+        });
       },
     });
   }
@@ -22,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Board/>
+        <Board sounds={this.state.sounds}/>
       </div>
     );
   }
